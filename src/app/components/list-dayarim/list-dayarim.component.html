@@ -1,0 +1,9 @@
+<h2>רשימת דיירים</h2>
+<table>
+    <thead>
+        <tr><td *ngFor="let topic of topics">-{{topic}}-</td></tr>
+    <tr class="td" *ngFor="let Dayar of dayarList">   
+            <td>{{Dayar.firstName}}</td><td></td><td>{{Dayar.numApartment}}</td><td>{{Dayar.floor}}</td><td>{{Dayar.sumForMonth}}</td><td>{{Dayar.phone}}</td><td>{{Dayar.email}}</td>    
+        </tr>   
+   </thead>
+</table>

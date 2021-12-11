@@ -1,0 +1,35 @@
+<div class="center">
+<h1>אשף יצירת בניין חדש</h1>
+  <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a><a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
+<!---->
+<h2>פרטי דיירים</h2>
+<form > 
+<label for="FirstName">: שם</label><br/> 
+<input class="input" #FirstName=ngModel id="FirstName" name="FirstName" type="string" required [(ngModel)]="dayar.FirstName"/>  
+ <div [hidden]="FirstName.valid || FirstName.pristine">שדה חובה*</div>
+ <br/>
+ <label for="numApartment">: דירה</label><br/>
+ <input class="input" #numApartment=ngModel id="numApartment" name="numApartment" type="number" required [(ngModel)]="dayar.numApartment"/> 
+ <div [hidden]="numApartment.valid || numApartment.pristine">שדה חובה*</div>
+ <br/>
+ <label for="floor">: קומה</label><br/>
+ <input class="input" #floor=ngModel id="floor" name="floor" type="number" required [(ngModel)]="dayar.floor"/>        
+ <div [hidden]="floor.valid || floor.pristine">שדה חובה*</div>
+ <br/>
+ <label for="sumForMonth">: חשבון חודשי</label><br/><!--disable במקרה שכפתור התשלום זהה בין כל הדיירים מעמוד קודם אינו נבחר-->
+ <input class="input" #sumForMonth=ngModel id="sumForMonth" name="sumForMonth" type="number" required [(ngModel)]="dayar.sumForMonth"/> 
+ <div [hidden]="sumForMonth.valid || sumForMonth.pristine">שדה חובה*</div>
+ <br/>
+ <label for="Phone">: טלפון</label><br/>
+ <input class="input" #Phone=ngModel id="Phone" name="Phone" type="string" required [(ngModel)]="dayar.Phone"/>        
+ <div [hidden]="Phone.valid || Phone.pristine">שדה חובה*</div> 
+ <br/>
+ <label for="MailAddress">: דוא"ל</label><br/>
+ <input class="input" #MailAddress=ngModel id="MailAddress" name="MailAddress" type="string" required [(ngModel)]="dayar.MailAddress"/>        
+ <div [hidden]="MailAddress.valid || MailAddress.pristine">שדה חובה*</div>
+</form > <br/>
+ שכירות<input type="checkbox"><br/>
+<button class="buttons" routerLink="/headCommittee/dayarDetails">דירה הבאה</button>
+</div>
+<button class="buttons" routerLink="/headCommittee/bankAccount">הבא</button>
+<button class="buttons" routerLink="/headCommittee/creatingBuilding">חזור</button>

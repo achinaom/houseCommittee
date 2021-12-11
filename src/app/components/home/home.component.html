@@ -1,0 +1,18 @@
+
+<nav class="nav">
+<a routerLink="/newCommittee">📞חבר חדש</a>
+<a href="#aboutUs">__אודותינו__</a>
+<a href="#contact">יצירת קשר</a>
+</nav>
+<div class="center">
+<p>התחברות דיירים / ועד בית</p>
+
+<p> קיבלת קוד התחברות ראשונית? לחץ כאן</p>
+    <input class="input" placeholder='הכנס את כתובת המייל שלך' [(ngModel)]="d.MailAddress" name="mail"/> <br><br>
+    <input class="input" placeholder='הכנס סיסמא' [(ngModel)]="d.PsWord" name="pass"/><br><br>
+    <button class="buttons" (click)="enter()">התחבר</button> <!--head-committee-->
+<p id="aboutUs">מה היא יכולה לעשות עבורכם?
+אלו רק חלק מהיכולות המדהימות שלנוי</p>
+ <p id="contact">צרו קשר
+        נשמח לעזור ולענות על כל שאלה שתעלה</p>
+</div>
