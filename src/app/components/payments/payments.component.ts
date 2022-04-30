@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Payment } from 'src/app/classes/payment';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-payments',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private paySer:PaymentService) { }
+
+  allPayments:Array<Payment>=new Array<Payment>()
 
   ngOnInit(): void {
+    this.paySer.GetAll().subscribe(
+      data=>{
+        debugger
+        this.allPayments=data;
+        console.log("succ!!");
+        console.log(data);
+      },
+      err=>{
+        debugger
+        console.log(err);
+      }
+    )
   }
 
 }

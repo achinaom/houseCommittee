@@ -1,0 +1,26 @@
+
+<h2>{{survey.SubSurvey}} הצג פירוט</h2>
+
+<div *ngIf="survey.Type=='טקסט חופשי'">
+    {{this.survey.NumAnswers}}<h3>דיירים הגיבו</h3>
+    <button (click)="showTheResponses()">לתגובות לחצו כאן</button>
+    <div *ngIf="isShow==true">
+        <ul>
+            <li *ngFor="let r of responseSer.listResponses">
+                {{r.ResponseDescription}}<br>{{r.SenderName}}
+                
+            </li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="survey.Type=='בחירה ייחודית'">   
+    
+    <h3>{{survey.Op1}} - {{survey.Re1}} קולות  </h3>
+    <h3>{{survey.Op2}} - {{survey.Re2}} קולות  </h3> <!--{{}}-->
+    <h3>: ההחלטה הקובעת היא
+        <h2 *ngIf="survey.Re1 > survey.Re2">{{survey.Op1}}</h2>
+        <h2 *ngIf="survey.Re1 < survey.Re2">{{survey.Op2}}</h2>
+        <h2 *ngIf="survey.Re1 == survey.Re2">אין רוב</h2>
+    </h3>
+</div>
+<button (click)="back()">חזרה לרשימת הסקרים</button>

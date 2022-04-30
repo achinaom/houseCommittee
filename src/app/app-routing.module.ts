@@ -22,6 +22,14 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { BankAccountComponent } from './components/bank-account/bank-account.component';
+import { CreatingSurveyComponent } from './components/creating-survey/creating-survey.component';
+import { EnterTheSurveyComponent } from './components/enter-the-survey/enter-the-survey.component';
+import { ResultsComponent } from './components/results/results.component';
+import { AddFaultComponent } from './components/add-fault/add-fault.component';
+import { MonthlyPaymentComponent } from './components/monthly-payment/monthly-payment.component';
+import { OneTimePaymentComponent } from './components/one-time-payment/one-time-payment.component';
+import { HachnasotComponent } from './components/hachnasot/hachnasot.component';
+import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
 
 
 
@@ -32,7 +40,8 @@ const routes: Routes = [
   {path: "head-committee", component: HeadCommitteeComponent,children:[
   {path: "", component: DeshbordComponent}
   ]},
-
+  
+  
   {path: "dayar", component: DayarComponent,children:[
   {path: "", component: DeshbordComponent},
   {path: "deshbord", component: DeshbordComponent},
@@ -43,14 +52,24 @@ const routes: Routes = [
   {path:"receipts", component: ReceiptsComponent },
   {path: "expenses", component: ExpensesComponent},
   {path: "documents", component: DocumentsComponent},
-  {path: "faults", component: FaultsComponent}
-  ]},
+  {path: "faults", component: FaultsComponent},
+  { path: "AddFault", component: AddFaultComponent }   
+]
+},
+  
+  
   {path: "headCommittee", component: HeadCommitteeComponent,children:[
   {path: "", component: HomeCommitteeComponent},
   {path: "creatingBuilding", component: CreatingBuildingComponent},
+  {path: "creatingSurvey", component: CreatingSurveyComponent},
+  {path: "enterTheSurvey/:surveyId", component: EnterTheSurveyComponent},
+  {path: "results/:surveyId", component: ResultsComponent},
   {path: "dayarDetails", component: DayarDetailsComponent},
   {path: "bankAccount", component: BankAccountComponent},
-
+  {path: "hachnasot", component: HachnasotComponent},
+  {path: "hotzaot", component: HotzaotComponent},
+  
+ 
   {path: "deshbord", component: DeshbordComponent},
   {path: "discourse-dayarim", component: DiscourseDayarimComponent},
   {path: "list-dayarim", component: ListDayarimComponent},
@@ -62,10 +81,18 @@ const routes: Routes = [
   {path: "bank-transfers", component: BankTransfersComponent},
   {path: "documents", component: DocumentsComponent},
   {path: "faults", component: FaultsComponent},
-  {path: "messages", component: MessagesComponent}
-
-]},
+  { path: "AddFault", component: AddFaultComponent }, 
+  {path: "messages", component: MessagesComponent},
+  {path: "monthlyPayment", component: MonthlyPaymentComponent},
+  {path: "one-timePayment", component: OneTimePaymentComponent}
+  ]}
 ];
+
+ 
+ // {path:"edit-dayar", component:EditDayarComponent }
+ 
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

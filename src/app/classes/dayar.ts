@@ -28,8 +28,9 @@ export class Dayar{
      //email: string;
     constructor(public DayarId?:number,public FirstName?:string,public LastName?:string,public MailAddress?:string,
         public Phone?:string,public PsWord?:string,public StateOfSum?:number,
-        public IsHouseCommittee?:boolean, public BuildingId?:number,public TypeUserId?:number,public numApartment?: number,
-        public floor?: number,public sumForMonth?: number){//numApartment? , floor? , sumForMonth?
+        public IsHouseCommittee?:boolean, public BuildingId?:number,
+        public NumFlat?: number,
+        public Floor?: number,public SumToMonth?: number){// sumForMonth?NumFlat
            
         // this.id=id;
         // this.firstName=firstName;

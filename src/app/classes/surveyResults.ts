@@ -1,5 +1,5 @@
 export class SurveyResults{
     
     constructor(public SurveyResultsId?:number,public DayarId?:number,public SurveyId?:number,
-        public FinallAnswer?:number,public AnotherAnswer?:string){}
+        public FinallAnswer?:string){}
 }

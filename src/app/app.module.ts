@@ -26,7 +26,22 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { ReceiptsComponent } from './components/receipts/receipts.component';
 import { BankAccountComponent } from './components/bank-account/bank-account.component';
+import { EditDayarComponent } from './components/edit-dayar/edit-dayar.component';
+import { CreatingSurveyComponent } from './components/creating-survey/creating-survey.component';
+import { EnterTheSurveyComponent } from './components/enter-the-survey/enter-the-survey.component';
+import { ResultsComponent } from './components/results/results.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import { CommonModule } from "@angular/common";
+import { AddFaultComponent } from './components/add-fault/add-fault.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MonthlyPaymentComponent } from './components/monthly-payment/monthly-payment.component';
+import { OneTimePaymentComponent } from './components/one-time-payment/one-time-payment.component';
+import {MatSelectModule} from '@angular/material/select';
+import { HachnasotComponent } from './components/hachnasot/hachnasot.component';
+import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
 
 @NgModule({
   declarations: [
@@ -52,14 +67,35 @@ import { BankAccountComponent } from './components/bank-account/bank-account.com
     MessagesComponent,
     PaymentsComponent,
     ReceiptsComponent,
-    BankAccountComponent
+    BankAccountComponent,
+    EditDayarComponent,
+    CreatingSurveyComponent,
+    EnterTheSurveyComponent,
+    ResultsComponent,
+    AddFaultComponent,
+    MonthlyPaymentComponent,
+    OneTimePaymentComponent,
+    HachnasotComponent,
+    HotzaotComponent
+   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   FormsModule,
-   HttpClientModule
+    FormsModule,
+   HttpClientModule,
+   MatInputModule, 
+    BrowserAnimationsModule,
+    CommonModule,
+    BrowserModule,
+    
+    MatDatepickerModule,       
+    MatNativeDateModule,
+    MatSelectModule        
+   
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

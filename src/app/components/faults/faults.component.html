@@ -1,1 +1,66 @@
 <p>faults works!</p>
+
+<button class="buttons" routerLink="/headCommittee/AddFault">פתח תקלה חדשה ➕</button>
+<hr/>
+<h5>סינונים שונים</h5>
+
+<label>בחר רמת דחיפות התקלה לסינון</label>
+<select (change)="sortByUrgency($event)" >
+    <!--<option value="0" disabled>בחר</option>-->
+    <option *ngFor="let u of AllUrgencyLevel">{{u.NameUrgency}}</option>
+</select><br>
+<label> בחר קטגוריית תקלה לסינון</label>
+<select (change)="sortByCategory($event)" >
+    <option *ngFor="let c of AllTakalotCategory">{{c.DescriptionC}}</option>
+</select><br>
+
+<label>מיון לפי סטטוס</label>
+<button (click)="sortByStatus(0)">תקלות שעדיין בטיפול</button><br>
+<button (click)="sortByStatus(1)"> תקלות שטופלו כבר</button><br/>
+<button (click)="clear()">ניקוי הסינון</button>
+<hr/> 
+
+
+
+<h5>כל התקלות</h5>
+<table class="table">
+    <thead>
+        <tr class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>
+       
+    <tr class="td" *ngFor="let t of AllTakalotAfterSort"> 
+     
+        <!--<td><button>לתיאום עם איש מקצוע</button></td>-->
+        <td>{{t.TakalaDescription}}</td>
+        <td>{{t.OpenDate|date:'dd/MM/yyyy'}}</td>
+        <td>{{t.UrgencyLevelId}}</td>
+        <td><input type="checkbox" [checked]="t.OpenTakala" (change)="changeOpen($event,t)"/></td>
+          <td>{{t.DayarId}}</td>
+          <td>{{t.TakalotCategoryId}}</td>
+          <td>{{t.TakalotId}}</td>
+        </tr>   
+   </thead>
+</table>
+<!-- <table>
+
+
+
+ <label for="isOpen">האם טופל?</label><br>
+       <input type="checkbox" [checked]="true" name="isOpen" id="isOpen" (change)="changeOpen($event)"/><br><br>
+    constructor(public TakalotId?:number,public OpenDate?:Date, public TakalotCategoryId?:number,public DayarId?:number,public TakalaDescription?:string, 
+    public OpenTakala?:number,public UrgencyLevelId?:number,public TipulDate?:Date,public TipulDescription? :string){}
+    <tr>
+        <th>takalotId</th>
+        <th>takalotCategoryId</th>
+        <th>openTakala?</th>
+        <th>urgencyLevelId</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let t of AllTakalotAfterSort">
+        <td>{{t.TakalotId}}</td>
+        <td>{{t.TakalotCategoryId}}</td>
+        <td><input type="checkbox" [checked]=t.openTakala/></td>
+        <td>{{t.UrgencyLevelId}}</td>
+        <td><button>לתיאום עם איש מקצוע</button></td>
+    </tr>
+</table> -->
+

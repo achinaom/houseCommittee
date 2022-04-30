@@ -1,0 +1,25 @@
+<h2>יצירת סקר חדש</h2>
+<form>
+    <input class="input" type="text" name="SubSurvey" required  [(ngModel)]="survey.SubSurvey" /> שאלה <br><br>
+    <select  name="Type" required  [(ngModel)]="survey.Type">
+      <option selected="true" [value]="null" disabled>בחר אפשרות</option>
+      <option >בחירה ייחודית</option>
+        <option >טקסט חופשי</option>
+        </select >
+        סוג שאלה<br><br>
+        <div *ngIf="survey.Type=='בחירה ייחודית'"><!--*ngIf="dayarSer.select"     [(ngModel)]="dayarSer.select"-->
+      <input class="input" type="string" name="Op1" required  [(ngModel)]="survey.Op1"/> תשובה <br><br>
+      <input class="input" type="string" name="Op2" required  [(ngModel)]="survey.Op2"/> תשובה <br><br>
+    </div> <br>
+    <!-- <p> :בחר תאריך אחרון למענה הסקר </p><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="survey.EndDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
+    <input type="number" [(ngModel)]="numDays"/>לאחר כמה ימים מהתאריך האחרון למענה, הסקר יעבור לרשימת סקרים ישנים?<br>
+     -->
+      <button class="buttons" (click)="saveSurvey()">שמור סקר</button>
+</form>
+

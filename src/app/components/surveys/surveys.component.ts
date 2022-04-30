@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Surveys } from 'src/app/classes/surveys';
+import { DayarService } from 'src/app/services/dayar.service';
+import { SurveysService } from 'src/app/services/surveys.service';
 
 @Component({
   selector: 'app-surveys',
@@ -7,9 +10,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveysComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public dayarSer:DayarService,public surveysSer :SurveysService) { }
+  
+  isShow:boolean=true;
+  
   ngOnInit(): void {
+    //this.surveysSer.surveysToEnter.NumAnswers
+    this.getList();
+  }
+  getList():void{
+    
+    this.surveysSer.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(
+      data => {
+        debugger                   
+        this.surveysSer.listS = data;
+        //for(var i=0 ;i<this.surveysSer.listS.length;i++){
+         // if(this.surveysSer.listS[i].NumAnswers==null)
+         // this.surveysSer.listS[i].NumAnswers=0;}
+          
+           
+      },
+     (err) => {console.log(err)}
+    );
+  }
+
+  deleteSurvey(surveyId:number,buildingId:number){
+    this.surveysSer.DeleteSurvey(surveyId,buildingId).subscribe(
+      data=>{this.surveysSer.listS=data},
+      err=>{console.log(err);}
+      )
+  }
+  // enter(survey:Surveys){
+  //   debugger
+  //   this.surveysSer.surveysToEnter = survey;
+
+  // }
+  creat(survey:Surveys){
+    
+    //שליחה במייל לכל הדיירים
+   this.surveysSer.SendSurvey(survey).subscribe(
+     data => {
+       debugger
+if(data == true)
+alert("ברגעים אלו נשלח לדיירים הסקר:  "+ survey.SubSurvey)
+else
+alert("יש בעייה בשליחת הסקר לדיירים")
+   },err=>{console.log(err);})
   }
 
 }
+

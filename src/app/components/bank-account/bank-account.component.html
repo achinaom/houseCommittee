@@ -1,31 +1,34 @@
 <div class="center">
     <h1>אשף יצירת בניין חדש</h1>
-      <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a><a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
-    <!---->
+      <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><!-- <a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a> -->
+      <a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
+    <!--constructor(public BankAccountId?:number,public NameOfAccountHolder?:string,public NameBank?:string,public NumSnif?:number,
+        public NumAccount?:number,public YeteraOnOpen?:number,   
+        public BuildingId?:number,public DayarId?:number
+        ){}
+    -->
     <h2>פרטי חשבון בנק הוועד</h2>
     <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
     <form > 
         <label for="firstName">: שם בעל החשבון</label><br/> 
-        <input class="input"  id="firstName"  type="string"/>  
+        <input class="input"  id="firstName" #FirstName=ngModel name="FirstName"  type="string" required  [(ngModel)]="bankTransfers.NameOfAccountHolder"/>  
          <br/>
-         <label for="firstName">: שם הבנק</label><br/> 
-        <input class="input"  id="firstName"  type="string"/>  
+         <label for="bankName">: שם הבנק</label><br/> 
+        <input class="input"  id="bankName" #BankName=ngModel name="BankName"  type="string" required  [(ngModel)]="bankTransfers.NameBank"/>  
          <br/>
-         <label for="firstName">: שם/מספר הסניף</label><br/> 
-        <input class="input"  id="firstName"  type="string"/>  
+         <label for="snifName">: מספר הסניף</label><br/> 
+        <input class="input"  id="snifName" #SnifName=ngModel name="SnifName"  type="string" required  [(ngModel)]="bankTransfers.NumSnif"/>  
          <br/>
-         <label for="firstName">: מספר חשבון</label><br/> 
-        <input class="input"  id="firstName"  type="string"/>  
+         <label for="numCount">: מספר חשבון</label><br/> 
+        <input class="input"  id="numCount" #NumCount=ngModel name="NumCount"  type="string" required  [(ngModel)]="bankTransfers.NumAccount"/>  
          <br/>
-         <label for="firstName">: יתרת פתיחה</label><br/> 
-        <input class="input"  id="firstName"  type="string"/>  
+         <label for="yetera">: יתרת פתיחה</label><br/> 
+        <input class="input"  id="yetera" #Yetera=ngModel name="Yetera"  type="string" required  [(ngModel)]="bankTransfers.YeteraOnOpen"/>  
          <br/>
-         <p><label for="firstName">: יתרת פתיחה</label><br/> 
-        <input class="input"  id="firstName"  type="string" disabled/>  
-         <br/>
+        
          <p>העלה תעודה מזהה🔗   </p><p>  העלה מסמך🔗</p> 
          
     </form>
 </div>
-<button class="buttons" routerLink="/headCommittee/deshbord">הבא</button>
+<button class="buttons" (click)="next()" routerLink="/headCommittee/deshbord">הבא</button>
 <button class="buttons" routerLink="/headCommittee/dayarDetails">חזור</button>

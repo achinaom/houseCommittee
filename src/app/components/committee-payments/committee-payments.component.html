@@ -1,1 +1,37 @@
-<p>committee-payments works!</p>
+<!--<p>committee-payments works!</p>
+ <nav class="nav">
+    <a routerLink="/headCommittee/monthlyPayment">תזכורת לתשלום חודשי</a>
+    <a routerLink="/headCommittee/one-timePayment">תזכורת לתשלום חד פעמי</a>
+    
+    </nav> -->
+  <h2>יצירת תזכורות לתשלום</h2>
+    <label for="to">אל:</label><br>
+    <mat-form-field id="to">
+        <mat-label>בחר דיירים</mat-label>
+        <mat-select multiple>
+            <mat-option> {{"בחר בכל הדיירים"}}</mat-option>
+          <mat-option *ngFor="let Dayar of dayarSer.listD" [value]="Dayar.dayarId"><!--איך מעבירים במודול את רשימת הדיירים שהוא בחר-->
+            {{Dayar.FirstName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+   
+   <label for="paymentFor"> תשלום עבור:</label><br>
+   <input type="text" id="paymentFor"><br><br>
+   תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
+    <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
+      <div *ngIf="paymentSer.radioB1">
+        <p>תאריך</p>
+      </div>
+     תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
+     <div *ngIf="!paymentSer.radioB1">
+        <label for="sum"> סכום:</label><br>
+        <input type="text" id="sum">
+      </div><br><br>
+      <button>שלח תזכורת לתשלום</button>
+      
+  
+      
+      <!-- <p-multiSelect [options]="cities" [(ngModel)]="selectedCities2" defaultLabel="Select a City" optionLabel="CityName"></p-multiSelect> -->
+        
+       

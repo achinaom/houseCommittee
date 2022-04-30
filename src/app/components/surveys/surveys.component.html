@@ -1,2 +1,27 @@
 <h2>סקרים</h2>
-<button class="buttons" >יצירת סקר חדש➕</button>
+<button class="buttons" routerLink="/headCommittee/creatingSurvey">יצירת סקר חדש➕</button>
+
+<table *ngIf="surveysSer.listS.length > 0" class="table" >
+    <thead>
+<tr>
+    <td ><b>שם הסקר</b></td>
+    <td><b>אנשים שענו</b></td>
+    <td></td>
+</tr>
+<tr *ngFor="let survey of surveysSer.listS">
+    <td>{{survey.SubSurvey}}</td>
+    <td>ענו {{survey.NumAnswers}}</td><!--{{surveysSer.surveysToEnter.NumAnswers}}-->
+    <td>
+        <button class="buttons"   routerLink="/headCommittee/results/{{survey.SurveyId}}">תוצאות</button><!--(click)="enter(survey)"-->
+        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="creat(survey)">יצירת הזמנה</button>
+        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="deleteSurvey(survey.SurveyId,survey.BuildingId)">מחק סקר</button>
+        <button class="buttons"  routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button><!--(click)="enter(survey)"-->
+    </td>
+</tr>
+</thead>
+</table>
+<button>סקרים ישנים</button><br>
+<!--<div *ngIf="isShow==false">
+    <app-enter-the-survey [survey]="surveysToEnter" (onSave)="onMySave($event)"></app-enter-the-survey>
+</div>
+(click)="enter(survey)"-->

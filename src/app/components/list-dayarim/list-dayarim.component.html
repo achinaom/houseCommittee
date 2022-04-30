@@ -1,9 +1,34 @@
 <h2>רשימת דיירים</h2>
-<table>
+<!--למה רק אחרי לחיצה כפולה הוא מציג לי את הטבלה-->
+<!--<label for="dayar">list</label><br/> 
+      <select id="dayar" name="listDayarim"> 
+       
+          <option *ngFor="let dayar of listDayarim" > {{dayar.FirstName}}</option>
+      </select >
+      <br/>--><!--[(ngModel)]="building.CityId"  [ngValue]="city.CityId"-->
+   
+<div *ngIf="isShow===true">
+    <input type="text" placeholder="...חיפוש דייר" [(ngModel)]="search"/><input class="buttons" type="button" value="search" (click)="sortByName()"><br>
+   <button (click)="back()">חזור</button> 
+<table class="table">
     <thead>
-        <tr><td *ngFor="let topic of topics">-{{topic}}-</td></tr>
-    <tr class="td" *ngFor="let Dayar of dayarList">   
-            <td>{{Dayar.firstName}}</td><td></td><td>{{Dayar.numApartment}}</td><td>{{Dayar.floor}}</td><td>{{Dayar.sumForMonth}}</td><td>{{Dayar.phone}}</td><td>{{Dayar.email}}</td>    
+        <tr *ngIf="dayarSer.dayar.IsHouseCommittee" class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>
+        <tr *ngIf="!dayarSer.dayar.IsHouseCommittee" class="th"><th class="topic" *ngFor="let topic2 of topics2">  {{topic2}}  </th></tr>
+       
+    <tr class="td" *ngFor="let Dayar of dayarSer.listD"> 
+        <td *ngIf="dayarSer.dayar.IsHouseCommittee"><button (click)="edit(Dayar)">✍🏻</button></td> <!--*ngIf="dayar.IsHouseCommittee==true"-->
+        <td *ngIf="dayarSer.dayar.IsHouseCommittee">₪{{Dayar.SumToMonth}}</td>
+        <td >{{Dayar.MailAddress}}</td>
+        <td >{{Dayar.Phone}}</td>
+        <td >דירה  {{Dayar.NumFlat}}</td>
+        <td >{{Dayar.LastName}}</td>
+        <td *ngIf="!Dayar.FirstName">דירה - {{Dayar.NumFlat}}</td>
+        <td >{{Dayar.FirstName}}</td>  
+   
         </tr>   
    </thead>
 </table>
+</div><!--dayarSer.listD-->
+<div *ngIf="isShow===false">
+    <app-edit-dayar [dayar]="dayarToEdit" (onSave)="onMySave($event)"></app-edit-dayar><!---->
+</div>

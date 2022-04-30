@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BuildingService } from 'src/app/services/building.service';
 import { Dayar } from '../../classes/dayar';
 import { DayarService } from '../../services/dayar.service';
 
@@ -10,7 +11,7 @@ import { DayarService } from '../../services/dayar.service';
 })
 export class NewCommitteeComponent implements OnInit {
 
-  constructor(public dayarSer:DayarService,public r:Router) {}
+  constructor(public dayarSer:DayarService,public buildingSer: BuildingService, public r:Router) {}
   dayar:Dayar=new Dayar()
   verifyCode1:string;
   //dayar.PsWord:string;
@@ -26,22 +27,23 @@ debugger
       alert("ווידוא סיסמא אינו תואם לסיסמא");
   else
   { 
-   debugger
+  debugger
+  this.dayar.IsHouseCommittee=true
   this.dayarSer.addDayar(this.dayar).subscribe(
     data=>{
       debugger
         if(data===null)
-        alert("בעייה");
-
+        alert("בעייה בכניסה למערכת");
        else
           if(data.DayarId==-1)//?
           alert("מייל זה מופיע כבר במערכת");
-else
-         { alert("דייר זה הוסף בהצלחה");
-         this.dayarSer.dayar=data
-         this.dayarSer.dayar.IsHouseCommittee=true//זה לא עידכן בשרת שהוא וועד בית...
+       else
+         { 
+          alert("דייר זה הוסף בהצלחה");
+          this.dayarSer.dayar=data
+        
            this.r.navigate(['/headCommittee']);
-    }
+    } 
       
        },
     err=>{alert(err)}

@@ -1,14 +1,17 @@
 
 <div class="container mt-3">
   {{this.d.dayar.FirstName}}
-  {{ this.d.dayar.LastName}}
+  {{ this.d.dayar.LastName}}<br>
+  {{this.buildingSer.buildingAddress.Street}}
+  {{this.buildingSer.buildingAddress.NumBuilding}}<br>
+  {{this.city}}
   <!--פה אמור להציג את שם המשתמש שנכנס -->
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" routerLink="/headCommittee/deshbord">דשבורד</a><!--deshbord-->
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/discourse-dayarim">שיח דיירים</a><!--discourse-dayarim-->
+        <a class="nav-link" routerLink="/headCommittee/discourse-dayarim">לוח הודעות דיגיטלי</a><!--discourse-dayarim-->
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/headCommittee/list-dayarim">רשימת דיירים</a><!--list-dayarim-->
@@ -16,31 +19,37 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/headCommittee/surveys">סקרים</a><!--surveys-->
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/committee-payments">תשלומי ועד</a><!--committee-payments-->
+     <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/headCommittee/committee-payments">תשלומי ועד</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/special-payments">תשלומים מיוחדים</a><!--special-payments-->
+        <a class="nav-link" routerLink="/headCommittee/special-payments">תשלומים מיוחדים</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/expenses">הוצאות</a><!--expenses-->
+        <a class="nav-link" routerLink="/headCommittee/expenses">הוצאות</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/suppliers">ספקים</a><!--suppliers-->
+        <a class="nav-link" routerLink="/headCommittee/suppliers">ספקים</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/bank-transfers">העברות לבנק</a><!--bank-transfers-->
+        <a class="nav-link" routerLink="/headCommittee/bank-transfers">העברות לבנק</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/documents">מסמכים</a><!--documents-->
+        <a class="nav-link" routerLink="/headCommittee/documents">מסמכים</a>
       </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/headCommittee/messages">הודעות</a>
+      </li>-->
       <li class="nav-item">
         <a class="nav-link" routerLink="/headCommittee/faults">תקלות</a><!--faults-->
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/headCommittee/messages">הודעות</a><!--messages-->
+      <li *ngIf="d.dayar.IsHouseCommittee" class="nav-item">
+        <a class="nav-link" routerLink="/headCommittee/committee-payments">תזכורות לתשלומים</a>
       </li>
-     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/headCommittee/bank-transfers">פרטי בנק</a>
+      </li>
+      
     </ul>
   </div>
 <router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<h1>{{survey.SubSurvey}}</h1>
+
+<div *ngIf="survey.Type=='טקסט חופשי'">
+    <h3>כתוב את תשובתך</h3>
+    <input type="text" size="30" width="30" [(ngModel)]="respose.ResponseDescription"/>
+</div>
+<div *ngIf="survey.Type=='בחירה ייחודית'">   
+    <h3>בחר תשובה אחת</h3>
+
+<!-- <button class="buttons" onclick="funOp1(this.survey.Op1)" >{{this.survey.Op1}}</button><br>
+<button class="buttons" onclick="funOp2(this.survey.Op2)">{{this.survey.Op2}}</button> -->
+{{this.survey.Op1}} <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB"/><br>
+{{this.survey.Op2}} <input type="radio" name="radio1" [value]="false" [(ngModel)]="surveysSer.radioB"/>
+
+
+<!-- <button type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op1}}</button>
+<button type="radio" name="radio1" [value]="false" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op2}}</button> -->
+</div>
+<button (click)="back()">חזרה</button>
+<button (click)="save()">שמור בחירה</button>
+
+

@@ -1,1 +1,25 @@
 <p>bank-transfers works!</p>
+<h2>פרטי חשבון בנק הוועד</h2>
+    <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
+    <form > 
+        <label for="firstName">: שם בעל החשבון</label><br/> 
+        <input class="input"  id="firstName" #FirstName=ngModel name="FirstName"  type="string" required  [(ngModel)]="bankTransfers.NameOfAccountHolder"/>  
+         <br/>
+         <label for="bankName">: שם הבנק</label><br/> 
+        <input class="input"  id="bankName" #BankName=ngModel name="BankName"  type="string" required  [(ngModel)]="bankTransfers.NameBank"/>  
+         <br/>
+         <label for="snifName">: מספר הסניף</label><br/> 
+        <input class="input"  id="snifName" #SnifName=ngModel name="SnifName"  type="string" required  [(ngModel)]="bankTransfers.NumSnif"/>  
+         <br/>
+         <label for="numCount">: מספר חשבון</label><br/> 
+        <input class="input"  id="numCount" #NumCount=ngModel name="NumCount"  type="string" required  [(ngModel)]="bankTransfers.NumAccount"/>  
+         <br/>
+         <label for="yetera">: יתרת פתיחה</label><br/> 
+        <input class="input"  id="yetera" #Yetera=ngModel name="Yetera"  type="string" required  [(ngModel)]="bankTransfers.YeteraOnOpen"/>  
+         <br/>
+        
+         <p>העלה תעודה מזהה🔗   </p><p>  העלה מסמך🔗</p> 
+         
+    </form>
+    <!-- <button class="buttons" (click)="edit()">הבא</button>
+    <button class="buttons" (click)="back()">חזור</button> -->
