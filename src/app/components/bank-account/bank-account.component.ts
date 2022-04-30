@@ -29,5 +29,4 @@ export class BankAccountComponent implements OnInit {
     )
     alert("אם אינך רוצה למלא כעת את פרטי חשבון ועד הבית תוכל למלא או לערוך ולהוסיף בהגדרות בכל עת בהמשך")
   }
-
 }
