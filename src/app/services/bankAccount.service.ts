@@ -27,7 +27,7 @@ export class BankAccountService {
   editBankTransfers(bank:BankTransfers):Observable<BankTransfers>
   {
     debugger
-    return this.http.get<BankTransfers>(this.url+"editBankTransfers"+bank) 
+    return this.http.put<BankTransfers>(this.url+"editBankTransfers",bank) 
   }
   
 }

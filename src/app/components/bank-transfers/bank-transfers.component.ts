@@ -14,14 +14,17 @@ export class BankTransfersComponent implements OnInit {
   constructor(public bankSer : BankAccountService, public dayarSer :DayarService ) { }
   isShow:boolean=true;
   ngOnInit(): void {
-this.bankSer.getBankTransfers(this.dayarSer.dayar.BuildingId).subscribe(
-  data=>{
-    debugger
-    if(data==null)
-    alert("problem")
-    else
-    this.bankTransfers = data;
-  }, err=>{alert(err)})
+    this.get();
+  }
+  get(){
+    this.bankSer.getBankTransfers(this.dayarSer.dayar.BuildingId).subscribe(
+      data=>{
+        debugger
+        if(data==null)
+        alert("problem")
+        else
+        this.bankTransfers = data;
+      }, err=>{alert(err)})
   }
   show(){
     this.isShow=false;
@@ -34,7 +37,10 @@ this.bankSer.getBankTransfers(this.dayarSer.dayar.BuildingId).subscribe(
         alert("problem")
         else
       {  this.bankTransfers = d;
-        this.isShow==true;}
+        this.isShow=true;}
       }, err=>{alert(err)})
+  }
+  back(){
+    this.isShow=true; 
   }
 }
