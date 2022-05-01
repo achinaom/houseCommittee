@@ -69,7 +69,7 @@ export class FaultsComponent implements OnInit {
         alert("null")
         else
         {this.AllTakalot = d;
-        this.AllTakalotAfterSort=d;}
+        this.AllTakalotAfterSort=d.sort(function(y,x) {return x.TakalotId-y.TakalotId});}
       }
     )
    }

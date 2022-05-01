@@ -26,16 +26,14 @@
 <table class="table">
     <thead>
         <tr class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>
-       
+      
     <tr class="td" *ngFor="let t of AllTakalotAfterSort"> 
-     
-        <!--<td><button>לתיאום עם איש מקצוע</button></td>-->
         <td>{{t.TakalaDescription}}</td>
         <td>{{t.OpenDate|date:'dd/MM/yyyy'}}</td>
-        <td>{{t.UrgencyLevelId}}</td>
+        <td>{{t.UrgencyName}}</td>
         <td><input type="checkbox" [checked]="t.OpenTakala" (change)="changeOpen($event,t)"/></td>
-          <td>{{t.DayarId}}</td>
-          <td>{{t.TakalotCategoryId}}</td>
+          <td>{{t.DayarName}}</td>
+          <td>{{t.CategoryName}}</td>
           <td>{{t.TakalotId}}</td>
         </tr>   
    </thead>

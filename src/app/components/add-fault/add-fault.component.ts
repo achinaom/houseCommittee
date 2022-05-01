@@ -98,16 +98,9 @@ this.newTakala.TakalaDescription
     this.newTakala.DayarId = this.dayarSer.dayar.DayarId
     this.newTakala.OpenTakala = 0;
     this.newTakala.BuildingId = this.dayarSer.dayar.BuildingId
+    debugger
     this.TakalotService.AddTakala(this.newTakala).subscribe(
       data => {
-// this.deshbordSer.editStatus(this.dayarSer.dayar.BuildingId).subscribe(
-//   d => {
-//     if(d === false)
-//      alert("problem");
-//       else 
-//       alert("succ!!");
-//     }, err => {console.log("try again...:(");}
-// )
         this.r.navigate(['/headCommittee/faults']);
       debugger
         console.log("succ!!");
