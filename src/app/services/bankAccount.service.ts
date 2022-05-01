@@ -19,5 +19,15 @@ export class BankAccountService {
     debugger
     return this.http.post<BankTransfers>(this.url+"addBankAccount",b)
   }
+  getBankTransfers(buildingId:number):Observable<BankTransfers>
+  {
+    debugger
+    return this.http.get<BankTransfers>(this.url+"getBankTransfers/"+buildingId)
+  }
+  editBankTransfers(bank:BankTransfers):Observable<BankTransfers>
+  {
+    debugger
+    return this.http.get<BankTransfers>(this.url+"editBankTransfers"+bank) 
+  }
   
 }

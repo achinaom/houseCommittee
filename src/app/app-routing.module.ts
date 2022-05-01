@@ -53,7 +53,9 @@ const routes: Routes = [
   {path: "expenses", component: ExpensesComponent},
   {path: "documents", component: DocumentsComponent},
   {path: "faults", component: FaultsComponent},
-  { path: "AddFault", component: AddFaultComponent }   
+  { path: "AddFault", component: AddFaultComponent } ,
+  { path: "bank-transfers", component: BankTransfersComponent }
+   
 ]
 },
   

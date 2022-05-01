@@ -1,7 +1,16 @@
 <p>bank-transfers works!</p>
 <h2>פרטי חשבון בנק הוועד</h2>
     <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
-    <form > 
+    <div *ngIf="isShow==true">
+       שם בעל החשבון : {{bankTransfers.NameOfAccountHolder}} <br> 
+       שם הבנק : {{bankTransfers.NameBank}} <br> 
+       מספר הסניף : {{bankTransfers.NumSnif}} <br> 
+       מספר חשבון : {{bankTransfers.NumAccount}} <br> 
+       יתרת פתיחה : {{bankTransfers.YeteraOnOpen}} <br> 
+       <button *ngIf="this.dayarSer.dayar.IsHouseCommittee" (click)="show()">עריכת פרטים</button>
+    </div>
+    <div>
+    <form *ngIf="isShow==false"> 
         <label for="firstName">: שם בעל החשבון</label><br/> 
         <input class="input"  id="firstName" #FirstName=ngModel name="FirstName"  type="string" required  [(ngModel)]="bankTransfers.NameOfAccountHolder"/>  
          <br/>
@@ -9,17 +18,18 @@
         <input class="input"  id="bankName" #BankName=ngModel name="BankName"  type="string" required  [(ngModel)]="bankTransfers.NameBank"/>  
          <br/>
          <label for="snifName">: מספר הסניף</label><br/> 
-        <input class="input"  id="snifName" #SnifName=ngModel name="SnifName"  type="string" required  [(ngModel)]="bankTransfers.NumSnif"/>  
+        <input class="input"  id="snifName" #SnifName=ngModel name="SnifName"  type="number" required  [(ngModel)]="bankTransfers.NumSnif"/>  
          <br/>
          <label for="numCount">: מספר חשבון</label><br/> 
-        <input class="input"  id="numCount" #NumCount=ngModel name="NumCount"  type="string" required  [(ngModel)]="bankTransfers.NumAccount"/>  
+        <input class="input"  id="numCount" #NumCount=ngModel name="NumCount"  type="number" required  [(ngModel)]="bankTransfers.NumAccount"/>  
          <br/>
          <label for="yetera">: יתרת פתיחה</label><br/> 
-        <input class="input"  id="yetera" #Yetera=ngModel name="Yetera"  type="string" required  [(ngModel)]="bankTransfers.YeteraOnOpen"/>  
+        <input class="input"  id="yetera" #Yetera=ngModel name="Yetera"  type="number" required  [(ngModel)]="bankTransfers.YeteraOnOpen"/>  
          <br/>
         
          <p>העלה תעודה מזהה🔗   </p><p>  העלה מסמך🔗</p> 
-         
+         <button (click)="save()">שמור פרטים</button>
     </form>
+</div>
     <!-- <button class="buttons" (click)="edit()">הבא</button>
     <button class="buttons" (click)="back()">חזור</button> -->
