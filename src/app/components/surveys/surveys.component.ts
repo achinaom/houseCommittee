@@ -23,7 +23,7 @@ export class SurveysComponent implements OnInit {
     this.surveysSer.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(
       data => {
         debugger                   
-        this.surveysSer.listS = data;
+        this.surveysSer.listS = data.sort(function(y,x) {return x.SurveyId-y.SurveyId});;
         //for(var i=0 ;i<this.surveysSer.listS.length;i++){
          // if(this.surveysSer.listS[i].NumAnswers==null)
          // this.surveysSer.listS[i].NumAnswers=0;}

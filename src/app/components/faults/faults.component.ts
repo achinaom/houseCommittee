@@ -29,7 +29,7 @@ export class FaultsComponent implements OnInit {
     this.TakalotService.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(//this.TakalotService.GetAll().subscribe(
       data => {
         this.AllTakalot = data;
-        this.AllTakalotAfterSort=data;
+        this.AllTakalotAfterSort=data.sort(function(y,x) {return x.TakalotId-y.TakalotId});
         console.log("succ!");
         debugger
       },

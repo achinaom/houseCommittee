@@ -25,7 +25,7 @@ export class DiscourseDayarimComponent implements OnInit {
       data=>{
             // alert("שליפת ההודעות הוצלחה");
             this.messageSer.listMessages = data;
-            debugger;
+           
             this.messageSer.listMessages=this.messageSer.listMessages.sort(function(y,x) {return x.MessagesId-y.MessagesId})
           },
      (err) => {console.log(err)}
