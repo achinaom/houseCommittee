@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewCommitteeComponent } from './components/newCommittee/newCommittee.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HeadCommitteeComponent } from './components/head-committee/head-committee.component';
@@ -83,7 +83,7 @@ import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
    HttpClientModule,
    MatInputModule, 
     BrowserAnimationsModule,

@@ -18,24 +18,24 @@ city:string;
     this.d.dayar.FirstName
     this.d.dayar.LastName
 debugger
-    
-  this.buildingSer.getAddress(this.dayarSer.dayar.BuildingId).subscribe(
-data=>{
- debugger
-if(data==null)
-alert("problem")
-else
-{
-this.buildingSer.buildingAddress = data;
-this.citiesSer.getNameCity(this.buildingSer.buildingAddress.CityId).subscribe(
-  d=>{
-  debugger
-this.city = d;
- }, err=>{alert(err)})
-} 
-}, err=>{alert(err)})
+//     if(this.dayarSer.dayar.BuildingId!=undefined){
+//   this.buildingSer.getAddress(this.dayarSer.dayar.BuildingId).subscribe(
+// data=>{
+//  debugger
+// if(data==null)
+// alert("problem")
+// else
+// {
+// this.buildingSer.buildingAddress = data;
+// this.citiesSer.getNameCity(this.buildingSer.buildingAddress.CityId).subscribe(
+//   d=>{
+//   debugger
+// this.city = d;
+//  }, err=>{alert(err)})
+// } 
+// }, err=>{alert(err)})
  
-
+// }
  
 } 
 }

@@ -30,7 +30,7 @@ export class Dayar{
         public Phone?:string,public PsWord?:string,public StateOfSum?:number,
         public IsHouseCommittee?:boolean, public BuildingId?:number,
         public NumFlat?: number,
-        public Floor?: number,public SumToMonth?: number){// sumForMonth?NumFlat
+        public Floor?: number,public SumToMonth?: number, public sendMail:boolean=false){// sumForMonth?NumFlat
            
         // this.id=id;
         // this.firstName=firstName;

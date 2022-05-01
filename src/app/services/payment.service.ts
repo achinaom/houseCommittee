@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Dayar } from '../classes/dayar';
 import { Payment } from '../classes/payment';
 
 @Injectable({
@@ -23,5 +24,9 @@ GetAll():Observable<Array<Payment>>
 GetAllById(id:number):Observable<Array<Payment>>
 {
   return this.http.get<Array<Payment>>(this.url+"GetAllById/"+id)
+}
+sendMail(listDayarim:Array<Dayar>):Observable<boolean>
+{debugger
+  return this.http.get<boolean>(this.url+"sendMail/"+listDayarim)
 }
 }
