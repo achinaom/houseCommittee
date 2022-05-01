@@ -1,13 +1,13 @@
-<p>bank-transfers works!</p>
+
 <h2>פרטי חשבון בנק הוועד</h2>
-    <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
+    <p *ngIf="dayarSer.dayar.IsHouseCommittee">על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו או ערכו את פרטי חשבון בנק הוועד</p>
     <div *ngIf="isShow==true">
        שם בעל החשבון : {{bankTransfers.NameOfAccountHolder}} <br> 
        שם הבנק : {{bankTransfers.NameBank}} <br> 
        מספר הסניף : {{bankTransfers.NumSnif}} <br> 
        מספר חשבון : {{bankTransfers.NumAccount}} <br> 
        יתרת פתיחה : {{bankTransfers.YeteraOnOpen}} <br> 
-       <button *ngIf="this.dayarSer.dayar.IsHouseCommittee" (click)="show()">עריכת פרטים</button>
+       <button *ngIf="dayarSer.dayar.IsHouseCommittee" (click)="show()">עריכת פרטים</button>
     </div>
     <div>
     <form *ngIf="isShow==false"> 

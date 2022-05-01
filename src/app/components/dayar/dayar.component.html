@@ -2,9 +2,9 @@
 <div class="container mt-3">
   {{this.d.dayar.FirstName}}
   {{this.d.dayar.LastName}}<br>
-  {{this.building.Street}}
-  {{this.building.NumBuilding}}<br>
-  {{this.building.CityId}}
+  <div *ngIf="dayarSer.dayar.BuildingId!=undefined">{{this.buildingSer.buildingAddress.Street}}
+    {{this.buildingSer.buildingAddress.NumBuilding}}<br>
+    {{this.city.CityName}}</div>
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" routerLink="/dayar/deshbord">דשבורד</a><!--deshbord-->

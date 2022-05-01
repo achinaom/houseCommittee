@@ -2,9 +2,9 @@
 <div class="container mt-3">
   {{this.d.dayar.FirstName}}
   {{ this.d.dayar.LastName}}<br>
-  <!-- {{this.buildingSer.buildingAddress.Street}}
+  <div *ngIf="dayarSer.dayar.BuildingId!=undefined">{{this.buildingSer.buildingAddress.Street}}
   {{this.buildingSer.buildingAddress.NumBuilding}}<br>
-  {{this.city}} -->
+  {{this.city.CityName}}</div>
   <!--פה אמור להציג את שם המשתמש שנכנס -->
     <ul class="nav flex-column">
       <li class="nav-item">

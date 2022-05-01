@@ -15,9 +15,9 @@ GetAllCities():Observable<Array<Cities>>
    {
       return this.http.get<Array<Cities>>(this.url+"GetAllCities")
     }
-getNameCity(cityId:number):Observable<string>
+getNameCity(cityId:number):Observable<Cities>
 {
   debugger
-  return this.http.get<string>(this.url+"getNameCity/"+cityId);
+  return this.http.get<Cities>(this.url+"getNameCity/"+cityId);
 }    
 }

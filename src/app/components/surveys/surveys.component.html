@@ -1,5 +1,5 @@
 <h2>סקרים</h2>
-<button class="buttons" routerLink="/headCommittee/creatingSurvey">יצירת סקר חדש➕</button>
+<button class="buttons" *ngIf="dayarSer.dayar.IsHouseCommittee" routerLink="/headCommittee/creatingSurvey">יצירת סקר חדש➕</button>
 
 <table *ngIf="surveysSer.listS.length > 0" class="table" >
     <thead>
@@ -20,7 +20,7 @@
 </tr>
 </thead>
 </table>
-<button>סקרים ישנים</button><br>
+
 <!--<div *ngIf="isShow==false">
     <app-enter-the-survey [survey]="surveysToEnter" (onSave)="onMySave($event)"></app-enter-the-survey>
 </div>
