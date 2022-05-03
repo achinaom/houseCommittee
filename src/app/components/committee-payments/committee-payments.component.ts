@@ -48,7 +48,22 @@ export class CommitteePaymentsComponent implements OnInit {
   send(){
     if(this.paymentSer.radioB1==true)
     {
-      this.paymentSer.sendMail(this.dayarSer.listD).subscribe(data=>{if(data==null)alert("problem")},err=>{alert(err)})
+      for(var i = 0; i < this.dayarSer.listD.length;i++){
+        if(this.dayarSer.listD[i].sendMail)
+        this.dayarSer.sendMail(this.dayarSer.listD[i].MailAddress).subscribe(
+          data=>{
+            debugger
+            if(data==null)
+            alert("problem")
+            else
+            alert("yesssss")
+          },err=>{alert(err)})
+      }
+      // this.paymentSer.sendMail(this.dayarSer.listD).subscribe(
+      //   data=>{
+      //     if(data==null)
+      //     alert("problem")
+      //   },err=>{alert(err)})
     
     }
   }

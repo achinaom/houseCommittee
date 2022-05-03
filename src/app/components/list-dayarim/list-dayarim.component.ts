@@ -11,7 +11,8 @@ import { Dayar } from '../../classes/dayar';
   styleUrls: ['./list-dayarim.component.css']
 })
 export class ListDayarimComponent implements OnInit {
-
+  private searchValue; 
+   private list;
   constructor(public dayarSer: DayarService , public buildingSer: BuildingService, public r:Router) { }
   //topic = ['חשבון חודשי','אמייל','טלפון','שם משפחה','שם פרטי','מחיקה','עריכה'];//,'?מושכרת'
   topics = ['עריכה','חשבון חודשי','אמייל','טלפון','דירה','שם משפחה','שם פרטי'];
@@ -21,8 +22,11 @@ export class ListDayarimComponent implements OnInit {
  isShow:boolean=true;
  listD:Array<Dayar>=new Array<Dayar>()
  index = 0;
+ 
   ngOnInit(): void {
     this.getList();
+    this.list =  this.dayarSer.listD;
+    debugger
   }
   getList():void{
     this.dayarSer.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(
@@ -86,6 +90,9 @@ if(dayarEdit!=null)
 else
 this.isShow = true;
 }
-
+quickSearch(){
+  debugger 
+  this.list.setQuickFilter(this.searchValue);
+}
   
 }

@@ -25,8 +25,6 @@ GetAllById(id:number):Observable<Array<Payment>>
 {
   return this.http.get<Array<Payment>>(this.url+"GetAllById/"+id)
 }
-sendMail(listDayarim:Array<Dayar>):Observable<boolean>
-{debugger
-  return this.http.get<boolean>(this.url+"sendMail/"+listDayarim)
-}
+
+
 }

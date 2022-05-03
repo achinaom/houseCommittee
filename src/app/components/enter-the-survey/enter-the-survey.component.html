@@ -9,8 +9,13 @@
 
 <!-- <button class="buttons" onclick="funOp1(this.survey.Op1)" >{{this.survey.Op1}}</button><br>
 <button class="buttons" onclick="funOp2(this.survey.Op2)">{{this.survey.Op2}}</button> -->
-{{this.survey.Op1}} <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB"/><br>
-{{this.survey.Op2}} <input type="radio" name="radio1" [value]="false" [(ngModel)]="surveysSer.radioB"/>
+{{this.survey.Op1}} <input type="radio" name="radio1" checked [value]="1" [(ngModel)]="surveysSer.radioB"/><br>
+{{this.survey.Op2}} <input type="radio" name="radio1" [value]="2" [(ngModel)]="surveysSer.radioB"/><br>
+
+<div *ngIf="survey.NumOp >= 1">{{this.survey.Op3}} <input type="radio" name="radio1" [value]="3" [(ngModel)]="surveysSer.radioB"/></div>
+<div *ngIf="survey.NumOp >= 2">{{this.survey.Op4}} <input type="radio" name="radio1" [value]="4" [(ngModel)]="surveysSer.radioB"/></div>
+<div *ngIf="survey.NumOp >= 3">{{this.survey.Op5}} <input type="radio" name="radio1" [value]="5" [(ngModel)]="surveysSer.radioB"/></div>
+<div *ngIf="survey.NumOp >= 4">{{this.survey.Op6}} <input type="radio" name="radio1" [value]="6" [(ngModel)]="surveysSer.radioB"/></div>
 
 
 <!-- <button type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op1}}</button>

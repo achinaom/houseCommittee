@@ -46,7 +46,8 @@ debugger
       this.surveyResults.SurveyId = this.survey.SurveyId
       this.surveyResults.DayarId = this.dayarSer.dayar.DayarId
        debugger
-   if(this.surveysSer.radioB===true)
+       
+   if(this.surveysSer.radioB===1)
    {this.surveyResults.FinallAnswer = this.survey.Op1
      this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
      d=>{
@@ -76,7 +77,7 @@ debugger
                 alert("בעייה בהוספת התוצאה")
                 else           
                this.survey.Re1 += 1;
-               this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2;
+               this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
   
   this.surveysSer.EditSurvey(this.survey).subscribe(
     d=>{
@@ -96,7 +97,7 @@ debugger
 
    }, err=>{console.log(err);})
 }
-   else{
+if(this.surveysSer.radioB===2){
     {this.surveyResults.FinallAnswer = this.survey.Op2
       this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
       d=>{
@@ -126,7 +127,7 @@ debugger
                  alert("בעייה בהוספת התוצאה")
                  else           
                 this.survey.Re2 += 1;
-                this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2;
+                this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
    
    this.surveysSer.EditSurvey(this.survey).subscribe(
      d=>{
@@ -143,15 +144,219 @@ debugger
               }, err=>{console.log(err);})
           
           }
+          
 
    }, err=>{console.log(err);})
+   
 }
+
    }
    
   //  this.survey.Re2 += 1
   // this.surveysSer.surveysToEnter.NumAnswers = this.surveysSer.surveysToEnter.Re1 + this.surveysSer.surveysToEnter.Re2;
-  
+  if(this.surveysSer.radioB===3)
+  {this.surveyResults.FinallAnswer = this.survey.Op3
+    this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
+    d=>{
+      if(d === true)
+     {//עידכון תוצאה אם הוא מצא שהדייר ענה כבר על הסקר
+       this.surveyResultsSer.EditResult(this.surveyResults).subscribe(
+         data=>{
+           debugger
+         if(data == null)
+           alert("יש בעייה")
+           else
+           debugger
+          { alert("עודכנה תוצאה חדשה מדייר זה")
+           // this.survey.Re1 -= 1;
+           // this.survey.Re2 += 1;
+           this.location.back();}
+         }, 
+         err=>{console.log(err);}
+         )
+      }
+     if(d == false){
+       debugger
+           //הוספת תוצאה חדשה
+           this.surveyResultsSer.AddResult(this.surveyResults).subscribe(
+             data=>{debugger
+               if(data===null)
+               alert("בעייה בהוספת התוצאה")
+               else           
+              this.survey.Re3 += 1;
+              this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
+ 
+ this.surveysSer.EditSurvey(this.survey).subscribe(
+   d=>{
+     debugger
+     if(d===null)
+          alert("בעייה בעידכון הסקר");
+    else
+     this.location.back(); 
+   },
+   err=>{console.log(err);}
+   )
+ 
+
+             }, err=>{console.log(err);})
+         
+         }
+
+  }, err=>{console.log(err);})
+}
+if(this.surveysSer.radioB===4)
+{this.surveyResults.FinallAnswer = this.survey.Op4
+  this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
+  d=>{
+    if(d === true)
+   {//עידכון תוצאה אם הוא מצא שהדייר ענה כבר על הסקר
+     this.surveyResultsSer.EditResult(this.surveyResults).subscribe(
+       data=>{
+         debugger
+       if(data == null)
+         alert("יש בעייה")
+         else
+         debugger
+        { alert("עודכנה תוצאה חדשה מדייר זה")
+         // this.survey.Re1 -= 1;
+         // this.survey.Re2 += 1;
+         this.location.back();}
+       }, 
+       err=>{console.log(err);}
+       )
+    }
+   if(d == false){
+     debugger
+         //הוספת תוצאה חדשה
+         this.surveyResultsSer.AddResult(this.surveyResults).subscribe(
+           data=>{debugger
+             if(data===null)
+             alert("בעייה בהוספת התוצאה")
+             else           
+            this.survey.Re4 += 1;
+            this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
+
+this.surveysSer.EditSurvey(this.survey).subscribe(
+ d=>{
+   debugger
+   if(d===null)
+        alert("בעייה בעידכון הסקר");
+  else
+   this.location.back(); 
+ },
+ err=>{console.log(err);}
+ )
+
+
+           }, err=>{console.log(err);})
+       
+       }
+
+}, err=>{console.log(err);})
+}
+if(this.surveysSer.radioB===5)
+{this.surveyResults.FinallAnswer = this.survey.Op5
+  this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
+  d=>{
+    if(d === true)
+   {//עידכון תוצאה אם הוא מצא שהדייר ענה כבר על הסקר
+     this.surveyResultsSer.EditResult(this.surveyResults).subscribe(
+       data=>{
+         debugger
+       if(data == null)
+         alert("יש בעייה")
+         else
+         debugger
+        { alert("עודכנה תוצאה חדשה מדייר זה")
+         // this.survey.Re1 -= 1;
+         // this.survey.Re2 += 1;
+         this.location.back();}
+       }, 
+       err=>{console.log(err);}
+       )
+    }
+   if(d == false){
+     debugger
+         //הוספת תוצאה חדשה
+         this.surveyResultsSer.AddResult(this.surveyResults).subscribe(
+           data=>{debugger
+             if(data===null)
+             alert("בעייה בהוספת התוצאה")
+             else           
+            this.survey.Re5 += 1;
+            this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
+
+this.surveysSer.EditSurvey(this.survey).subscribe(
+ d=>{
+   debugger
+   if(d===null)
+        alert("בעייה בעידכון הסקר");
+  else
+   this.location.back(); 
+ },
+ err=>{console.log(err);}
+ )
+
+
+           }, err=>{console.log(err);})
+       
+       }
+
+}, err=>{console.log(err);})
+}
+ 
+if(this.surveysSer.radioB===6)
+{this.surveyResults.FinallAnswer = this.survey.Op6
+  this.surveyResultsSer.CheckDayarResult(this.surveyResults.DayarId,this.survey).subscribe(
+  d=>{
+    if(d === true)
+   {//עידכון תוצאה אם הוא מצא שהדייר ענה כבר על הסקר
+     this.surveyResultsSer.EditResult(this.surveyResults).subscribe(
+       data=>{
+         debugger
+       if(data == null)
+         alert("יש בעייה")
+         else
+         debugger
+        { alert("עודכנה תוצאה חדשה מדייר זה")
+         // this.survey.Re1 -= 1;
+         // this.survey.Re2 += 1;
+         this.location.back();}
+       }, 
+       err=>{console.log(err);}
+       )
+    }
+   if(d == false){
+     debugger
+         //הוספת תוצאה חדשה
+         this.surveyResultsSer.AddResult(this.surveyResults).subscribe(
+           data=>{debugger
+             if(data===null)
+             alert("בעייה בהוספת התוצאה")
+             else           
+            this.survey.Re6 += 1;
+            this.survey.NumAnswers = this.survey.Re1 + this.survey.Re2 + this.survey.Re3 + this.survey.Re4 + this.survey.Re5 + this.survey.Re6;
+
+this.surveysSer.EditSurvey(this.survey).subscribe(
+ d=>{
+   debugger
+   if(d===null)
+        alert("בעייה בעידכון הסקר");
+  else
+   this.location.back(); 
+ },
+ err=>{console.log(err);}
+ )
+
+
+           }, err=>{console.log(err);})
+       
+       }
+
+}, err=>{console.log(err);})
+}
   }
+  
   debugger
   if(this.survey.Type=='טקסט חופשי'){
     this.respose.SurveyId = this.survey.SurveyId

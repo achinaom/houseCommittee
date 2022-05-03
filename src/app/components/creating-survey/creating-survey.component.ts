@@ -40,6 +40,14 @@ numDays:number;
 //    this.dayarSer.isShow=true
  //   this.r.navigate(['/headCommittee/surveys']); 
  // }
+ addOp(){
+   debugger
+   if(this.surveysSer.numOp < 4)
+   this.surveysSer.numOp += 1
+ }
+ lessOp(){
+  this.surveysSer.numOp -= 1
+ }
   saveSurvey(){
    
     this.survey.BuildingId = this.dayarSer.dayar.BuildingId
@@ -47,7 +55,11 @@ numDays:number;
     this.survey.NumAnswers = 0
     this.survey.Re1 = 0
     this.survey.Re2 = 0
-   
+    this.survey.Re3 = 0
+    this.survey.Re4 = 0
+    this.survey.Re5 = 0
+    this.survey.Re6 = 0
+    this.survey.NumOp = this.surveysSer.numOp
   //  this.survey.EndDate.getDay.length+this.numDays;
   //  this.survey.ExpireDate =  this.survey.EndDate;
     debugger

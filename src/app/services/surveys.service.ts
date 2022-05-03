@@ -11,10 +11,12 @@ export class SurveysService {
   constructor(public http:HttpClient) { }
   survey:Surveys = new Surveys();
   surveysToEnter:Surveys = new Surveys();
-  radioB:boolean=true;
+  radioB:number;
   radioB1: number = 0;
   radioB2: number = 0;
   isShow:boolean=false;
+  numOp:number = 0;
+  Re:boolean=false;
   listS:Array<Surveys>=new Array<Surveys>()
 url="https://localhost:44339/api/Surveys/"
 
@@ -39,4 +41,9 @@ SendSurvey(survey:Surveys):Observable<boolean>
 {
   return this.http.post<boolean>(this.url+"SendSurvey",survey)
 }
+// setNumOp(num:number):Observable<number>
+// {
+//   debugger
+//   return this.http.get<number>(this.url+"setNumOp/"+num+"/"+surveyId)
+// }
 }

@@ -8,8 +8,9 @@
       <br/>--><!--[(ngModel)]="building.CityId"  [ngValue]="city.CityId"-->
    
 <div *ngIf="isShow===true">
-    <input type="text" placeholder="...חיפוש דייר" [(ngModel)]="search"/><input class="buttons" type="button" value="search" (click)="sortByName()"><br>
-   <button (click)="back()">חזור</button> 
+    <input type="text" placeholder="...חיפוש דייר" (keyup)="quickSearch()" [(ngModel)]="searchValue"/>
+       <!--  <input class="buttons" type="button" value="search" (click)="sortByName()"><br>
+   <button (click)="back()">חזור</button>  -->
 <table class="table">
     <thead>
         <tr *ngIf="dayarSer.dayar.IsHouseCommittee" class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>

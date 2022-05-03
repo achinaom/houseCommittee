@@ -48,7 +48,10 @@ SortByName(search:string,buildingId:number):Observable<Array<Dayar>>
 {
   return this.http.get<Array<Dayar>>(this.url+"SortByName/"+search+"/"+buildingId)
 }
-
+sendMail(mailTo:string):Observable<boolean>
+{debugger
+  return this.http.get<boolean>(this.url+"SendEmail/"+mailTo)
+}
 }
 
    

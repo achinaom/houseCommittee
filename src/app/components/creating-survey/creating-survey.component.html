@@ -10,6 +10,12 @@
         <div *ngIf="survey.Type=='בחירה ייחודית'"><!--*ngIf="dayarSer.select"     [(ngModel)]="dayarSer.select"-->
       <input class="input" type="string" name="Op1" required  [(ngModel)]="survey.Op1"/> תשובה <br><br>
       <input class="input" type="string" name="Op2" required  [(ngModel)]="survey.Op2"/> תשובה <br><br>
+       <button (click)="addOp()">➕</button><br><br>
+      <div *ngIf="surveysSer.numOp >= 1"><button (click)="lessOp()">➖</button><input class="input" type="string" name="Op3" required  [(ngModel)]="survey.Op3"/> תשובה </div><br>
+      <div *ngIf="surveysSer.numOp >=2"><button (click)="lessOp()">➖</button><input class="input" type="string" name="Op4" required  [(ngModel)]="survey.Op4"/> תשובה </div><br>
+      <div *ngIf="surveysSer.numOp >=3"><button (click)="lessOp()">➖</button><input class="input" type="string" name="Op5" required  [(ngModel)]="survey.Op5"/> תשובה </div><br>
+      <div *ngIf="surveysSer.numOp >=4"><button (click)="lessOp()">➖</button><input class="input" type="string" name="Op6" required  [(ngModel)]="survey.Op6"/> תשובה </div>
+     
     </div> <br>
     <!-- <p> :בחר תאריך אחרון למענה הסקר </p><br>
     <mat-form-field appearance="fill">
