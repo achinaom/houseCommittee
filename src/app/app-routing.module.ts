@@ -30,13 +30,18 @@ import { MonthlyPaymentComponent } from './components/monthly-payment/monthly-pa
 import { OneTimePaymentComponent } from './components/one-time-payment/one-time-payment.component';
 import { HachnasotComponent } from './components/hachnasot/hachnasot.component';
 import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
+import { PasswordChangeComponent } from './components/password-change/password-change.component';
+import { SendReminderComponent } from './components/send-reminder/send-reminder.component';
+import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
 
 
 
 const routes: Routes = [
   {path:"home", component: HomeComponent },
   {path: "newCommittee", component: NewCommitteeComponent},
-
+  {path: "password-change", component: PasswordChangeComponent},
+  {path: "send-reminder", component: SendReminderComponent},
+  {path: "response-survey", component: ResponseSurveyComponent},
   {path: "head-committee", component: HeadCommitteeComponent,children:[
   {path: "", component: DeshbordComponent}
   ]},
@@ -54,8 +59,8 @@ const routes: Routes = [
   {path: "documents", component: DocumentsComponent},
   {path: "faults", component: FaultsComponent},
   { path: "AddFault", component: AddFaultComponent } ,
-  { path: "bank-transfers", component: BankTransfersComponent }
-   
+  { path: "bank-transfers", component: BankTransfersComponent },
+  {path: "enterTheSurvey/:surveyId", component: EnterTheSurveyComponent}
 ]
 },
   

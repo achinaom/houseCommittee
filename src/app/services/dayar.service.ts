@@ -52,6 +52,10 @@ sendMail(mailTo:string):Observable<boolean>
 {debugger
   return this.http.get<boolean>(this.url+"SendEmail/"+mailTo)
 }
+editPassword(dayarId:number,pass:string):Observable<Dayar>
+{debugger
+  return this.http.get<Dayar>(this.url+"editPassword/"+dayarId+"/"+pass)
+}
 }
 
    

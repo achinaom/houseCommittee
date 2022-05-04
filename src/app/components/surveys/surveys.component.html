@@ -15,7 +15,8 @@
         <button class="buttons"   routerLink="/headCommittee/results/{{survey.SurveyId}}">תוצאות</button><!--(click)="enter(survey)"-->
         <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="creat(survey)">יצירת הזמנה</button>
         <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="deleteSurvey(survey.SurveyId,survey.BuildingId)">מחק סקר</button>
-        <button class="buttons"  routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button><!--(click)="enter(survey)"-->
+        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons"  routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button><!--(click)="enter(survey)"-->
+        <button *ngIf="!dayarSer.dayar.IsHouseCommittee" class="buttons"  routerLink="/dayar/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button>
     </td>
 </tr>
 </thead>
