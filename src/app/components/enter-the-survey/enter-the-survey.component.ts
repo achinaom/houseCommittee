@@ -25,15 +25,29 @@ export class EnterTheSurveyComponent implements OnInit {
   respose : Responses = new Responses()
   survey: Surveys = new Surveys()
   surveyResults: SurveyResults = new SurveyResults()
-  ngOnInit(): void {
-    this.route.params.subscribe((paramsFromUrl: Params) => {
+  ngOnInit(): void {  
+      this.route.params.subscribe((paramsFromUrl: Params) => {
       this.surveyId = paramsFromUrl.surveyId;
       this.survey = this.surveysSer.listS.find(x=>x.SurveyId==this.surveyId)
       });
 debugger
-    // this.surveysSer.surveysToEnter.Op1
-    // this.surveysSer.surveysToEnter.Op2
   }
+  // this.getList();
+  // getList():void{
+    
+  //   this.surveysSer.GetAllById(109).subscribe(
+  //     data => {
+  //       debugger                   
+  //       this.surveysSer.listS = data.sort(function(y,x) {return x.SurveyId-y.SurveyId});
+  //       //for(var i=0 ;i<this.surveysSer.listS.length;i++){
+  //        // if(this.surveysSer.listS[i].NumAnswers==null)
+  //        // this.surveysSer.listS[i].NumAnswers=0;}
+          
+           
+  //     },
+  //    (err) => {console.log(err)}
+  //   );
+  // }
   // funOp1(Op1:string){
   //   this.survey.Result = Op1;
   // }
