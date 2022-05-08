@@ -1,0 +1,263 @@
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg  fixed-top bg-danger shadow-lg p-3 mb-5 rounded">
+    <div class="container-fluid" style="direction: rtl">
+      <div mdbCollapse class="collapse navbar-collapse" id="fixedNavbarExample">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" routerLink="/newCommittee" style="cursor: pointer">חבר חדש</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutUs">אודותינו</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">יצירת קשר</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+</header>
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../assets/building-7092747_1920.jpg" class="d-block w-100 img-slide-top" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+
+        <div class="bg-secondary p-5 text-white bg-opacity-75" style='width:400px; height:400px;'>
+          <div>
+            <h2>התחברות דיירים / ועד בית</h2>
+
+            <p>קיבלת קוד התחברות ראשונית? לחץ כאן</p>
+
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">כתובת אימייל</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="d.MailAddress" name="mail">
+                <div id="emailHelp" class="form-text">לא נשתף את כתובת אימייל שלך עם אף אחד אחר.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">סיסמא</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="d.PsWord"
+                name="pass">
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-lg mt-2 px-3" (click)="enter()">התחבר</button>
+            </form>
+            <!-- <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <input class="input" placeholder="הכנס את כתובת המייל שלך" [(ngModel)]="d.MailAddress" name="mail" />
+            <br /><br />
+            <input class="input" type="password" placeholder="הכנס סיסמא" [(ngModel)]="d.PsWord"
+              name="pass" /><br /><br />
+            <button type="button" class="btn btn-danger btn-lg" (click)="enter()">התחבר</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="carousel-item">
+      <img src="../../../assets/buildings1.jpg" class="d-block w-100 img-slide-top" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>וועד חכם</h5>
+        <p>Sליבי היא מערכת לניהול בניינים משותפים המנוהלים ע"י ועד בית.
+          אנחנו נותנים כלי עבודה לוועדי בתים וכלי שירות לדיירים.
+          שמנו דגש על פשטות, חסכון בזמן ובעלויות!
+          </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/buildings1.jpg" class="d-block w-100 img-slide-top" alt="...">
+
+    </div> -->
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+<!-- 
+<div class="width-100vw place-content-center blue-gradient">
+  <div
+    class="container m-auto d-flex flex-column bd-highlight mb-3 bg-img bg-size from-top px-5"
+  >
+      <p class="text-white ">ועד חכם</p>
+
+      <div
+        class="opacity-90 max-w-300 btn light-blue-button pointer btn-size fs-13rem fw-500 mt-auto bd-highlight d-flex justify-content-center align-items-center"
+      >
+        <p class="mb-0 text-center" href="https://app.minecraftcloud/login/">
+          Start Now
+        </p>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <nav class="nav">
+  <a routerLink="/newCommittee">📞חבר חדש</a>
+  <a href="#aboutUs">__אודותינו__</a>
+  <a href="#contact">יצירת קשר</a>
+</nav> -->
+<div class="center pb-2">
+  <!--head-committee--><br /><br /><br />
+  <h2 id='#aboutUs'>?מה הוא יכול לעשות עבורכם</h2>
+  <p>אלו רק חלק מהיכולות המדהימות של וועד חכם</p>
+  ------<br /><br />
+  <table class="mx-auto">
+    <tr>
+      <td>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+            <h2>
+            ניהול ודיווח תקלות
+            </h2>
+            <h3>
+              כל דייירי הבניין יוכלו לדווח על תקלות ולקבל<br />.עדכון על טיפולן
+              ועלות הטיפול
+            </h3>
+          </div>
+          <div class="p-2 flex-shrink-1 bd-highlight py-auto">
+            <img src="../../../assets/high_priority-144.png" width="80px">
+          </div>
+        </div>
+      </td>
+      <td>
+         <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+                        <h2>
+
+        החלטות משותפות
+                    </h2>
+
+        <h3>
+          תוכלו ליצור סקרים ולהחליט ביחד מה יהיה אופי <br />הגינה החדשה, או איזה
+          סוג שיפוץ יבוצע בחלל<br />.הכניסה
+        </h3>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img src="../../../assets/document-96.png" width="80px">
+      </div>
+    </div>
+      </td>
+      <td>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+<h2>
+        תזכורות לתשלומים
+      </h2>  <h3>
+          מהיום לדיירים בבניין<br />יהיה אפשרות לקבל <br />
+          תזכורות למייל עבור תשלומים
+        </h3>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img src="../../../assets/Crediticon.png" width="80px">
+      </div>
+    </div>
+      </td>
+    </tr>
+    <tr class="pt-5">
+      <td>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+          <h2>
+
+        ניהול הבניין
+      </h2>
+
+        <h3>
+          ,ניהול תהליכי היום יום תוך מיקוד בחסכון בזמן<br />
+          .חסכון והתייעלות
+        </h3>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img src="../../../assets/organization-144.png" width="80px">
+      </div>
+    </div>
+      </td>
+      <td>
+         <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+          <h2>
+
+        הודעות בין הדיירים
+      </h2>
+
+        <h3>
+          הלוח מאפשר דו שיח בין כל דיירי הבניין <br />,בצורה פשוטה וידידותית<br />
+          ...'וזהו בדיוק המקום להעלות סיכום של ישיבת הועד וכו
+        </h3>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img src="../../../assets/surveyicon.png" width="80px">
+      </div>
+    </div>
+      </td>
+      <td>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 w-100 bd-highlight">
+                        <h2>
+
+        צפייה בהוצאות והכנסות
+      </h2>
+
+        <h3>
+          כל דיירי הבניין יוכלו לצפות<br />באופן גורף בניהול הוצאות <br />
+          .והכנסות בבנייין
+        </h3>
+      </div>
+      <div class="p-2 flex-shrink-1 bd-highlight">
+        <img src="../../../assets/moneygraph.png" width="80px">
+      </div>
+    </div>
+      </td>
+    </tr>
+  </table>
+  <br /><br /><br />
+  <div class="shadow-lg p-3 mx-auto mb-5 bg-body rounded" style="width: 75vw">
+  <h2 id="contact">יצירת קשר</h2>
+  <p>נשמח לעזור ולענות על כל שאלה שתעלה</p>
+  <table class="mx-auto mt-5">
+    <tr>
+      <td class="px-5">
+        <img src="../../../assets/parts-1086747_1280.png" width="60px">
+       <h2> עקבו אחרינו בפייסבוק</h2> 
+        <p>חברים 245</p>
+      </td>
+      <td class="px-5">
+        <img src="../../../assets/smartphone-1132677_1280.png" width="60px">
+
+       <h2> צלצלו אלינו</h2>
+        <p>0735422567</p>
+      </td>
+      <td class="px-5">
+        <img src="../../../assets/letter-1132703_1280.png" width="60px">
+
+        <h2>שלחו לנו מייל</h2> 
+        <p>לחצו כאן</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>

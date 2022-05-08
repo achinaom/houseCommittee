@@ -1,0 +1,22 @@
+
+.ng-valid[required],.ng-valid.required{
+    border-left: 5px solid #42A948;/*green*/
+
+}
+.ng-invalid:not(form){
+    border-left: 5px solid 3a94442;/*red*/
+}
+
+.backgroundcolor{ 
+    margin: 0 auto; 
+    text-align: center ;  
+  }
+  
+  .buttons{
+    background-color: rgb(213, 213, 226);
+    border-radius: 5px;
+    font-size: 30px;
+   }
+   .red{
+       color: firebrick;
+   }

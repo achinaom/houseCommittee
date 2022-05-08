@@ -1,0 +1,22 @@
+.td {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .th {
+    background-color: rgb(110, 140, 223);
+    color: white;
+   
+  }
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  table {
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin: 0 auto;
+  
+  }
+  .topic{
+    text-align: center;
+  }
+  

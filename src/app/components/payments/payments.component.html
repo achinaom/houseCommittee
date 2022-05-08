@@ -1,0 +1,29 @@
+<p>payments works!</p>
+<table>
+    <tr>
+        <th>PaymentId</th>
+        <th>PaymentDate</th>
+        <!-- <th>MailAddress</th> -->
+        <th>DayarId</th>
+        <th>TypeOfPaymentId</th>
+        <th>NumOfPayment</th>
+        <th>SumOfPayment</th>
+    </tr>
+    <tr *ngFor="let p of allPayments">
+        <td>{{p.PaymentId}}</td>
+        <td>{{p.PaymentDate |date}}</td>
+        <!-- <td>{{p.mailAddress}}</td> -->
+        <td>{{p.DayarId}}</td>
+        <td>{{p.TypeOfPaymentId}}</td>
+        <td>{{p.NumOfPayment}}</td>
+        <td>{{p.SumOfPayment}}</td>
+    </tr>
+
+</table>
+<!-- 
+dayarId: 1
+numOfPayment: 1000
+paymentDate: "2022-03-19T00:00:00"
+paymentId: 1
+sumOfPayment: 1000
+typeOfPaymentId: 1 -->

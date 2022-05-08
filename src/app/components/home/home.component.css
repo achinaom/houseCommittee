@@ -1,0 +1,78 @@
+.center{
+  text-align: center ;
+  font-size: 15px;
+}
+
+.nav{
+    text-align: right;
+}
+
+.nav-link{
+color:white !important;
+font-size: 20px;
+
+}
+
+
+.img-slide-top{
+ height:calc(100vh - 50px) !important;
+}
+a{
+  color: white !important;
+}
+.blue-gradient {
+    height:100vh;
+    direction:rtl;
+    position: relative;
+    background: url(../../../assets/buildings1.jpg) no-repeat;
+    font-size: 70px;
+  }
+  /* .bg-img {
+      
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../../assets/buildings1.jpg) no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+  } */
+  
+  .d-block {
+    display: block;
+  }
+
+
+h3{
+  color:grey;
+}
+  @media (max-width: 992px) {
+    .bg-size {
+      background-size: 50%;
+    }
+  
+    .from-top {
+      padding-top: 100px;
+      padding-bottom: 200px;
+    }
+  }
+  .from-bottom {
+    /* bottom: 200px; */
+  }
+  @media (min-width: 992px) {
+    .from-top {
+      padding-bottom: 200px;
+      padding-top: 200px;
+    }
+  }
+  
+  .btn-size {
+    height: 50px;
+    width: 250px;
+  }
+  
+  .opacity-90 {
+    opacity: 90%;
+  }
+  
+
