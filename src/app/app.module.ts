@@ -42,6 +42,9 @@ import { OneTimePaymentComponent } from './components/one-time-payment/one-time-
 import {MatSelectModule} from '@angular/material/select';
 import { HachnasotComponent } from './components/hachnasot/hachnasot.component';
 import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
+import { SendReminderComponent } from './components/send-reminder/send-reminder.component';
+import { PasswordChangeComponent } from './components/password-change/password-change.component';
+import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,10 @@ import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
     MonthlyPaymentComponent,
     OneTimePaymentComponent,
     HachnasotComponent,
-    HotzaotComponent
+    HotzaotComponent,
+    SendReminderComponent,
+    PasswordChangeComponent,
+    ResponseSurveyComponent
    
 
   ],
@@ -89,6 +95,7 @@ import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
     BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
+    
     
     MatDatepickerModule,       
     MatNativeDateModule,

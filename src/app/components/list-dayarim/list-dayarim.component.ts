@@ -11,7 +11,7 @@ import { Dayar } from '../../classes/dayar';
   styleUrls: ['./list-dayarim.component.css']
 })
 export class ListDayarimComponent implements OnInit {
-  private searchValue; 
+  searchValue:any;
    private list;
   constructor(public dayarSer: DayarService , public buildingSer: BuildingService, public r:Router) { }
   //topic = ['חשבון חודשי','אמייל','טלפון','שם משפחה','שם פרטי','מחיקה','עריכה'];//,'?מושכרת'
